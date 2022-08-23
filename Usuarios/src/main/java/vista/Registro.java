@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vista;
 
 import static java.util.Objects.hash;
@@ -10,10 +7,7 @@ import modelo.SqlUsuarios;
 import modelo.Usuarios;
 import modelo.hash;
 
-/**
- *
- * @author ItsCatMaster
- */
+
 public class Registro extends javax.swing.JFrame {
 
     /**
@@ -48,6 +42,7 @@ public class Registro extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         btnRegistrarse = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -93,6 +88,13 @@ public class Registro extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("Registro");
 
+        btnIngresar.setText("Iniciar Sesion");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,7 +127,8 @@ public class Registro extends javax.swing.JFrame {
                                                 .addComponent(txtConfirmaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnIngresar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(264, 264, 264))))
@@ -174,9 +177,11 @@ public class Registro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(31, 31, 31)
                 .addComponent(btnRegistrarse)
-                .addGap(52, 52, 52))
+                .addGap(26, 26, 26)
+                .addComponent(btnIngresar)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -187,7 +192,7 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-
+        //Aqui se configura el boton de registrarse, junto con todos los textos y verificaciones
         SqlUsuarios modSql = new SqlUsuarios();
         Usuarios mod = new Usuarios();
         String pass = new String(txtPassword.getPassword());
@@ -225,7 +230,7 @@ public class Registro extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "El correo electronico no es valido");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "El usuario ya existe");
+                    JOptionPane.showMessageDialog(null, "El usuario ya existe, si tiene una cuenta inicie sesion");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Las contraseña no coincide");
@@ -239,6 +244,13 @@ public class Registro extends javax.swing.JFrame {
         Inicio.frmReg = null;
         
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+       
+        login L = new login();
+        L.setVisible(true);
+        
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void limpiar() {
         txtUsuario.setText("");
@@ -283,6 +295,7 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

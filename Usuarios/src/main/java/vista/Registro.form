@@ -61,6 +61,7 @@
                                       </Group>
                                   </Group>
                               </Group>
+                              <Component id="btnIngresar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -127,9 +128,11 @@
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="btnRegistrarse" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="btnIngresar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -223,6 +226,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Registro"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIngresar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Iniciar Sesion"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
